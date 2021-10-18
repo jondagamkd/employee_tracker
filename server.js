@@ -2,7 +2,6 @@ const express = require('express');
 const db = require('./db/connection');
 const inquirer = require('inquirer');
 const cTable = require('console.table');
-//const apiRoutes = require('./routes/apiRoutes');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -24,7 +23,7 @@ db.connect(err => {
     console.log(`Server running on port ${PORT}`);
 
     function questions() {
-    // Inquirer Prompt For First Set of Choices
+    // Inquirer prompt for first major set of choices.
         inquirer
         .prompt([
             {
@@ -36,10 +35,8 @@ db.connect(err => {
         ])
         .then(function(data) {
 
-            //console.log('Success!');
-            //console.log('You choice was: ' + data.mainChoice)
 
-            // Get all stuff
+            // First choice to bring up all departments.
             if (data.mainChoice === 'View all departments') {
                 const sql = `SELECT * FROM department`;
                 
@@ -53,6 +50,7 @@ db.connect(err => {
                     });
                 
             }
+            // Second choice to view all the roles.
             else if (data.mainChoice === 'View all roles') {
                 const sql = `SELECT role.*, department.name 
                 AS department_name 
@@ -70,6 +68,7 @@ db.connect(err => {
                     });
 
             }
+            // Third choice to view all employees.
             else if (data.mainChoice === 'View all employees') {
                 const sql = `SELECT 
                 employee.id AS employee_id, 
@@ -92,7 +91,7 @@ db.connect(err => {
                     questions()
                     });
             }
-
+            // Fourth choice to add a department.
             else if (data.mainChoice === 'Add a department') {
 
                 inquirer
@@ -120,11 +119,8 @@ db.connect(err => {
                     
                   });
 
-
-
-
             }
-            
+            // Fith choice to add a role.
             else if (data.mainChoice === 'Add a role') {
 
                 inquirer
@@ -166,7 +162,7 @@ db.connect(err => {
                   });
 
             }
-
+            // Sixth choice to add an employee.
             else if (data.mainChoice === 'Add an employee') {
 
                 inquirer
@@ -214,7 +210,7 @@ db.connect(err => {
                   });
 
             }
-
+            // Seventh choice to update an employee role.
             else if (data.mainChoice === 'Update an employee role') {
 
 
@@ -250,7 +246,7 @@ db.connect(err => {
                   });
             }
 
-
+            // In case of error catch all responses with this.
             else {
                 console.log('You choice was: ' + data.mainChoice)
                 questions()
