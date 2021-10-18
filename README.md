@@ -6,7 +6,7 @@
 
 ## Description 
 
-This handy little app can be used to take notes and it will save them on the server for later viewing.
+This code, when run via node.js, can be used to view and control a employee database.
 
 
 ## Table of Contents
@@ -21,14 +21,12 @@ This handy little app can be used to take notes and it will save them on the ser
 
 ## Usage 
 
-1. Visit the site [HERE](https://desolate-taiga-67985.herokuapp.com/).
-2. Click the GET STARTED button.
-3. Enter your note title and description on the NOTE TITLE and NOTE TEXT areas.
-4. A little save icon will appear top right, click that and it is saved!
-* You can also delete notes by clicking the little trash icon next to the note.
-<br><br>
+1. Install node, mysql2 and all dependendies.
+2. Run the schema and seeds file to get started.
+3. Start the server with npm start.
+4. Follow the intructions to modify your database!
 
-[![screenshot](./public/assets/img/noteTaker.jpg)](https://desolate-taiga-67985.herokuapp.com/)
+[![screenshot](./assets/img/employee_tracker.jpg)](https://watch.screencastify.com/v/xTmfOzeu6L1ZipZpkeUK)
 
 
 ## Contributing
@@ -57,6 +55,6 @@ I can be contacted via email or on github at:
 
 ## Links
 
-The site can be reached [HERE](https://desolate-taiga-67985.herokuapp.com/)
+The video can be reached [HERE](https://watch.screencastify.com/v/xTmfOzeu6L1ZipZpkeUK)
 
 
